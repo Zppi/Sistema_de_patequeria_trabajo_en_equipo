@@ -18,9 +18,8 @@ public abstract class Paquete {
         return peso;
     }
 
-    public double costoEnvio (){
-        return estrategia.costo(peso);
-    }
+    //public double costoEnvio (){
+
 
 
 }

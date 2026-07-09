@@ -10,7 +10,7 @@ public class EmpresaMensajeria {
     public void reporte (){
         double total =0;
         for (Paquete paquete : paquetes){
-            double costo = paquete.
+            double costo ;
         }
     }
 }
