@@ -6,5 +6,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        EmpresaMensajeria empresaMensajeria = new EmpresaMensajeria();
+
+        empresaMensajeria.RegistrarPaquete(new PaqueteEnvio("123",32,new EnvioEstandar()));
+
+        empresaMensajeria.reporte();
+
     }
 }
