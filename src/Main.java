@@ -20,7 +20,6 @@ public class Main {
             System.out.println("4. ");
             opcion = sc.nextInt();
         }while(opcion!=4);
-
         sc.close();
 
 
