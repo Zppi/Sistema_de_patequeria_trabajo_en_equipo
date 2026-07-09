@@ -9,8 +9,6 @@ public abstract class Paquete {
         this.estrategiaEnvio = estrategiaEnvio;
     }
 
-
-
     public double costoEnvio (){
         return estrategiaEnvio.calcularCosto(peso);
     }
@@ -19,7 +17,7 @@ public abstract class Paquete {
         System.out.println("-------------------------------");
         System.out.println("DESTINATARIO: "+  destinatario  );
         System.out.println("PESO: "+peso+" kg");
-        System.out.println("ENVIO: ");
+        System.out.println("ENVIO: "+estrategiaEnvio.getTipo());
         System.out.println("COSTO: $"+costoEnvio());
     }
 
