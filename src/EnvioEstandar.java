@@ -5,4 +5,8 @@ public class EnvioEstandar implements EstrategiaEnvio {
         return pesoKG *2.00;
     }
 
+    public String getTipo(){
+        return "Estandar";
+    }
+
 }
