@@ -5,4 +5,8 @@ public class EnvioInternacional implements EstrategiaEnvio{
         return pesoKG *6.00;
     }
 
+    public String getTipo(){
+        return "Internacional";
+    }
+
 }
