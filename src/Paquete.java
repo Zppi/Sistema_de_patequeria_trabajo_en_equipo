@@ -1,25 +1,26 @@
 public abstract class Paquete {
     String destinatario;
     double peso;
+    EstrategiaEnvio estrategiaEnvio;
 
-    public Paquete(String destinatario, double peso) {
+    public Paquete(String destinatario, double peso, EstrategiaEnvio estrategiaEnvio) {
         this.destinatario = destinatario;
         this.peso = peso;
-        if(peso <= 0) {
-            System.out.println("El peso debe ser mayor");
-        }
+        this.estrategiaEnvio = estrategiaEnvio;
     }
 
-    public String getNombre(){
-        return destinatario;
+
+
+    public double costoEnvio (){
+        return estrategiaEnvio.calcularCosto(peso);
     }
 
-    public double getPeso() {
-        return peso;
+    public void infoPaquete(){
+        System.out.println("-------------------------------");
+        System.out.println("DESTINATARIO: "+  destinatario  );
+        System.out.println("PESO: "+peso+" kg");
+        System.out.println("ENVIO: ");
+        System.out.println("COSTO: $"+costoEnvio());
     }
-
-    //public double costoEnvio (){
-
-
 
 }

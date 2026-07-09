@@ -5,4 +5,8 @@ public class EnvioExpress implements EstrategiaEnvio{
         return pesoKG *4.50;
     }
 
+    public String getTipo(){
+        return  "Express";
+    }
+
 }

@@ -10,7 +10,13 @@ public class EmpresaMensajeria {
     public void reporte (){
         double total =0;
         for (Paquete paquete : paquetes){
-            double costo ;
+            double costo = paquete.costoEnvio();
+
+            paquete.infoPaquete();
+            total += paquete.costoEnvio();
+
         }
+
+        System.out.println("TOTAL RECAURADO: $"+total);
     }
 }
