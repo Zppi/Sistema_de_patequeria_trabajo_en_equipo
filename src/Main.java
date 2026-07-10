@@ -14,6 +14,7 @@ public class Main {
         boolean seguir = true;
 
         while (seguir){
+            System.out.println();
             System.out.println("======== MENU PRINCIPAL ============");
             System.out.println("1. Nuevo envio ");
             System.out.println("2. Reporte");
@@ -29,13 +30,13 @@ public class Main {
                     break;
 
                 case 1:
-                    System.out.println("===== NEUVO ENVIO ========");
+                    System.out.println("===== NUEVO ENVIO ========");
                     System.out.println();
                     System.out.print("Destinatario: ");
                     String destino = sc.nextLine();
                     System.out.print("Peso: ");
                     double peso = sc.nextInt();
-                    System.out.println("Tipo de Envio: (1. express / 2. Estandar / 3. Internacional)");
+                    System.out.print("(1. express / 2. Estandar / 3. Internacional) - Tipo de Envio : ");
                     int tipo = sc.nextInt();
 
                     switch (tipo){

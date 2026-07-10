@@ -9,13 +9,20 @@ public class EmpresaMensajeria {
 
     public void reporte (){
         double total =0;
+        if (paquetes.isEmpty()){
+            System.out.println();
+            System.out.println("- SIN REGISTROS -");
+
+            return;
+        }
+
         for (Paquete paquete : paquetes){
 
             paquete.infoPaquete();
             total += paquete.costoEnvio();
 
         }
-
+        System.out.println("...................................");
         System.out.println("TOTAL RECAURADO: $"+total);
     }
 }
