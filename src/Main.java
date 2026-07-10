@@ -9,18 +9,61 @@ public class Main {
 
         EmpresaMensajeria empresaMensajeria = new EmpresaMensajeria();
 
-        empresaMensajeria.RegistrarPaquete(new PaqueteEnvio("123",32,new EnvioEstandar()));
-
-        empresaMensajeria.reporte();
         int  opcion;
-        do{
-            System.out.println("1. ");
-            System.out.println("2. ");
-            System.out.println("3. ");
-            System.out.println("4. ");
+
+        boolean seguir = true;
+
+        while (seguir){
+            System.out.println("======== MENU PRINCIPAL ============");
+            System.out.println("1. Nuevo envio ");
+            System.out.println("2. Reporte");
+            System.out.println("0. SALIR.");
+            System.out.println("--------------------------------");
+            System.out.print("Seleccione una Opcion: ");
             opcion = sc.nextInt();
-        }while(opcion!=4);
-        sc.close();
+            sc.nextLine();
+
+            switch (opcion){
+                case 0 :
+                    seguir =false;
+                    break;
+
+                case 1:
+                    System.out.println("===== NEUVO ENVIO ========");
+                    System.out.println();
+                    System.out.print("Destinatario: ");
+                    String destino = sc.nextLine();
+                    System.out.print("Peso: ");
+                    double peso = sc.nextInt();
+                    System.out.println("Tipo de Envio: (1. express / 2. Estandar / 3. Internacional)");
+                    int tipo = sc.nextInt();
+
+                    switch (tipo){
+                        case 1:
+                            empresaMensajeria.RegistrarPaquete(new PaqueteEnvio(destino,peso,new EnvioExpress()));
+                            break;
+
+                        case 2:
+                            empresaMensajeria.RegistrarPaquete(new PaqueteEnvio(destino, peso, new EnvioEstandar()));
+                            break;
+
+                        case 3:
+                            empresaMensajeria.RegistrarPaquete(new PaqueteEnvio(destino, peso, new EnvioInternacional()));
+                            break;
+
+                        default:
+                            System.out.println("- Opcion Invalida - Intente De Nuevo -");
+                    }
+                    break;
+
+                case 2:
+                    empresaMensajeria.reporte();
+                    break;
+
+                default:
+                    System.out.println("- Opcion Invalida - Intente De Nuevo -");
+            }
+        }
 
 
     }
